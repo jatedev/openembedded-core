@@ -42,6 +42,8 @@ S = "${WORKDIR}/Python-${PV}"
 
 inherit autotools multilib_header python-dir pythonnative
 
+PACKAGECONFIG[tkinter] = ",,tk,tk tk-lib"
+
 # The 3 lines below are copied from the libffi recipe, ctypes ships its own copy of the libffi sources
 #Somehow gcc doesn't set __SOFTFP__ when passing -mfloatabi=softp :(
 TARGET_CC_ARCH_append_armv6 = " -D__SOFTFP__"
